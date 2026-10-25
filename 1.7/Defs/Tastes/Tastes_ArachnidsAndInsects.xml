@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Spider-folk and insectoids. Each taste is a hediff plus the BloodTasteDef listing the xenotypes that give it; both
+       carry MayRequireAnyOf for those xenotypes' mods, so neither loads without one. Effects from a framework
+       (SM_ = Big and Small, VEF_ / VEF. = Vanilla Expanded, EBSG_ = EBSG) are only used where every listed mod
+       requires that framework. -->
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="DanZinagri.SpiderXenotypesBS,RedMattis.MoreXenos">
+    <defName>BT_Taste_Weaver</defName>
+    <label>weaver blood</label>
+    <description>Silky spider blood. The drinker's fingers turn deft and patient.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <GeneralLaborSpeed>0.15</GeneralLaborSpeed>
+          <ToxicResistance>0.1</ToxicResistance>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.05</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="DanZinagri.SpiderXenotypesBS,RedMattis.MoreXenos">
+    <defName>BT_Weaver</defName>
+    <!-- Silk Weaver, Tyrian Weaver, Nurserachne, devilspider -->
+    <xenotypes>
+      <li>SilkWeaver</li>
+      <li>TyrianWeaver</li>
+      <li>Nurserachne</li>
+      <li>BS_Devilspider</li>
+    </xenotypes>
+    <hediff>BT_Taste_Weaver</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="DanZinagri.SpiderXenotypesBS,RedMattis.MoreXenos,vera.bug">
+    <defName>BT_Taste_HunterSpider</defName>
+    <label>predator bug blood</label>
+    <description>Venomous ambush-hunter blood. The drinker waits, then strikes.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <MeleeHitChance>3</MeleeHitChance>
+          <HuntingStealth>0.15</HuntingStealth>
+          <ToxicResistance>0.15</ToxicResistance>
+          <MoveSpeed>0.2</MoveSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="DanZinagri.SpiderXenotypesBS,RedMattis.MoreXenos,vera.bug">
+    <defName>BT_HunterSpider</defName>
+    <!-- Arakron, Wolf Spider, weaver, Arachnidean, Mantid -->
+    <xenotypes>
+      <li>Arakron</li>
+      <li>WolfSpider</li>
+      <li>BS_Weaver</li>
+      <li>BP_Spiderman</li>
+      <li>BP_Mantid</li>
+    </xenotypes>
+    <hediff>BT_Taste_HunterSpider</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="DanZinagri.SpiderXenotypesBS">
+    <defName>BT_Taste_Hemox</defName>
+    <label>hemox blood</label>
+    <description>A living hemogen reservoir, bred by sanguophages for exactly this.</description>
+    <stages>
+      <li>
+        <hungerRateFactor>0.9</hungerRateFactor>
+        <statOffsets>
+          <HemogenGainFactor>0.6</HemogenGainFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="DanZinagri.SpiderXenotypesBS">
+    <defName>BT_Hemox</defName>
+    <!-- Hemox -->
+    <xenotypes>
+      <li>Hemox</li>
+    </xenotypes>
+    <hediff>BT_Taste_Hemox</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="RedMattis.BigSmall.Bugs,sarg.alphagenes,vanillaracesexpanded.insector">
+    <defName>BT_Taste_Hive</defName>
+    <label>hive blood</label>
+    <description>Chitin-thick insect blood. The drinker hardens and works tirelessly.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+          <MiningSpeed>0.1</MiningSpeed>
+          <ToxicResistance>0.1</ToxicResistance>
+          <WorkSpeedGlobal>0.05</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="RedMattis.BigSmall.Bugs,sarg.alphagenes,vanillaracesexpanded.insector">
+    <defName>BT_Hive</defName>
+    <!-- Xeno Worker, Xeno Nymph, Mutanted Nymph, Xeno Alate, Xeno Consort, Xeno Warrior, Xeno Predator, Xeno Emissary, Xeno Mutant, hiveling, insector -->
+    <xenotypes>
+      <li>BS_XenoWorker</li>
+      <li>BS_XenoNymph</li>
+      <li>BS_XenoNymphMutant</li>
+      <li>BS_XenoAlate</li>
+      <li>BS_XenoConsort</li>
+      <li>BS_XenoWarrior</li>
+      <li>BS_XenoPredator</li>
+      <li>BS_XenoEmissary</li>
+      <li>BS_XenoAbomination</li>
+      <li>AG_Hiveling</li>
+      <li>VRE_Insector</li>
+    </xenotypes>
+    <hediff>BT_Taste_Hive</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="RedMattis.BigSmall.Bugs,RedMattis.MoreXenos">
+    <defName>BT_Taste_Queen</defName>
+    <label>queen's blood</label>
+    <description>Royal blood of a hive mother, rich as jelly. The drinker feels serene, commanding and fertile.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <SocialImpact>0.15</SocialImpact>
+          <MentalBreakThreshold>-0.05</MentalBreakThreshold>
+          <ImmunityGainSpeed>0.15</ImmunityGainSpeed>
+          <Fertility>0.25</Fertility>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="RedMattis.BigSmall.Bugs,RedMattis.MoreXenos">
+    <defName>BT_Queen</defName>
+    <!-- Xeno Queen, Xeno Princess, Mutated Queen, Hive Queen, broodmother -->
+    <xenotypes>
+      <li>BS_XenoQueen</li>
+      <li>BS_XenoPrincess</li>
+      <li>BS_MutantXenoQueen</li>
+      <li>BS_HiveQueen</li>
+      <li>BS_Broodmother</li>
+    </xenotypes>
+    <hediff>BT_Taste_Queen</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="vera.bug">
+    <defName>BT_Taste_Moth</defName>
+    <label>moth blood</label>
+    <description>Soft, dusty moth blood. Plants and animals seem to like the drinker more.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <PlantWorkSpeed>0.15</PlantWorkSpeed>
+          <TameAnimalChance>0.15</TameAnimalChance>
+          <MentalBreakThreshold>-0.03</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="vera.bug">
+    <defName>BT_Moth</defName>
+    <!-- Lunarian -->
+    <xenotypes>
+      <li>BP_Lunarian</li>
+    </xenotypes>
+    <hediff>BT_Taste_Moth</hediff>
+  </BloodTastes.BloodTasteDef>
+
+</Defs>

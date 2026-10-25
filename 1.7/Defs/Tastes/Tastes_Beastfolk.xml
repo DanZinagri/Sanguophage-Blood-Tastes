@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Other beastfolk. Each taste is a hediff plus the BloodTasteDef listing the xenotypes that give it; both
+       carry MayRequireAnyOf for those xenotypes' mods, so neither loads without one. Effects from a framework
+       (SM_ = Big and Small, VEF_ / VEF. = Vanilla Expanded, EBSG_ = EBSG) are only used where every listed mod
+       requires that framework. -->
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="RedMattis.Undead,vanillaracesexpanded.lycanthrope">
+    <defName>BT_Taste_Lycan</defName>
+    <label>lycan blood</label>
+    <description>Wolf-blood that carries the curse's strength without the change.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <InjuryHealingFactor>0.4</InjuryHealingFactor>
+          <MoveSpeed>0.2</MoveSpeed>
+        </statOffsets>
+        <statFactors>
+          <MeleeDamageFactor>1.1</MeleeDamageFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="RedMattis.Undead,vanillaracesexpanded.lycanthrope">
+    <defName>BT_Lycan</defName>
+    <!-- Lycanthrope, lycan, wolfman -->
+    <xenotypes>
+      <li>VU_Lycantrope</li>
+      <li>VRE_Lycan</li>
+      <li>VRE_Wolfman</li>
+    </xenotypes>
+    <hediff>BT_Taste_Lycan</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="Erin.Fenrisulfr,foxian.league.raider,Erin.Shisune">
+    <defName>BT_Taste_Canid</defName>
+    <label>canid blood</label>
+    <description>Friendly canine and vulpine blood. The drinker feels sociable and keen-nosed.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <SocialImpact>0.1</SocialImpact>
+          <HuntingStealth>0.1</HuntingStealth>
+          <MoveSpeed>0.2</MoveSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="Erin.Fenrisulfr,foxian.league.raider,Erin.Shisune">
+    <defName>BT_Canid</defName>
+    <!-- Fenrisúlfr, Foxian, Greater Foxian, shisune -->
+    <xenotypes>
+      <li>ERN_Fenrisulfr</li>
+      <li>FL_Foxian</li>
+      <li>FL_Greater_Foxian</li>
+      <li>ERN_Shisune</li>
+    </xenotypes>
+    <hediff>BT_Taste_Canid</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="sarg.alphagenes,det.brawnum,tug.Minotaur">
+    <defName>BT_Taste_Bovine</defName>
+    <label>bovine blood</label>
+    <description>Heavy bovine blood. Strong, sturdy and stubborn.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <CarryingCapacity>25</CarryingCapacity>
+          <PainShockThreshold>0.05</PainShockThreshold>
+        </statOffsets>
+        <statFactors>
+          <MeleeDamageFactor>1.1</MeleeDamageFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="sarg.alphagenes,det.brawnum,tug.Minotaur">
+    <defName>BT_Bovine</defName>
+    <!-- rox-touched, brawnum, minotaur -->
+    <xenotypes>
+      <li>AG_RoxTouched</li>
+      <li>DV_Brawnum</li>
+      <li>RBM_Minotaur</li>
+    </xenotypes>
+    <hediff>BT_Taste_Bovine</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="tug.Satyr,V.Rooboid.Faun">
+    <defName>BT_Taste_Satyr</defName>
+    <label>satyr blood</label>
+    <description>Wild, mischievous goat-folk blood. The drinker feels playful and light on their hooves, or feet.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <PlantWorkSpeed>0.1</PlantWorkSpeed>
+          <MoveSpeed>0.2</MoveSpeed>
+          <SocialImpact>0.1</SocialImpact>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="tug.Satyr,V.Rooboid.Faun">
+    <defName>BT_Satyr</defName>
+    <!-- satyr, faun -->
+    <xenotypes>
+      <li>RBSF_Satyr</li>
+      <li>RBSF_Faun</li>
+    </xenotypes>
+    <hediff>BT_Taste_Satyr</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="DanZinagri.BiotechMonkeContinued,Sov.mhmmmmonke">
+    <defName>BT_Taste_Simian</defName>
+    <label>simian blood</label>
+    <description>Primate blood. The drinker's hands get busy.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <WorkSpeedGlobal>0.05</WorkSpeedGlobal>
+          <MoveSpeed>0.1</MoveSpeed>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.05</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="DanZinagri.BiotechMonkeContinued,Sov.mhmmmmonke">
+    <defName>BT_Simian</defName>
+    <!-- monke, Hozen -->
+    <xenotypes>
+      <li>Monke</li>
+      <li>GS_Hozen</li>
+    </xenotypes>
+    <hediff>BT_Taste_Simian</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="DanZinagri.Muriden">
+    <defName>BT_Taste_Muriden</defName>
+    <label>muriden blood</label>
+    <description>Quick, twitchy rodent-folk blood from mice and squirrels. The drinker feels smaller, lighter and hard to catch.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <MeleeDodgeChance>5</MeleeDodgeChance>
+          <MoveSpeed>0.3</MoveSpeed>
+        </statOffsets>
+        <statFactors>
+          <SM_BodySizeMultiplier>0.9</SM_BodySizeMultiplier>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="DanZinagri.Muriden">
+    <defName>BT_Muriden</defName>
+    <!-- muriden, Musmurden, sciurus, Kopidan -->
+    <xenotypes>
+      <li>Muriden</li>
+      <li>FeralMuriden</li>
+      <li>Sciurus</li>
+      <li>Kopidan</li>
+    </xenotypes>
+    <hediff>BT_Taste_Muriden</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="DanZinagri.Muriden">
+    <defName>BT_Taste_Beaver</defName>
+    <label>beaver blood</label>
+    <description>Industrious beaver-folk blood. The drinker wants to build something.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <ConstructionSpeed>0.2</ConstructionSpeed>
+          <PlantWorkSpeed>0.1</PlantWorkSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="DanZinagri.Muriden">
+    <defName>BT_Beaver</defName>
+    <!-- castoran, Castoroid -->
+    <xenotypes>
+      <li>Castoran</li>
+      <li>Castoroid</li>
+    </xenotypes>
+    <hediff>BT_Taste_Beaver</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="DanZinagri.Muriden">
+    <defName>BT_Taste_Capybara</defName>
+    <label>capybara blood</label>
+    <description>Capybara-folk blood. Nothing seems worth getting upset about.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <MentalBreakThreshold>-0.06</MentalBreakThreshold>
+          <SocialImpact>0.05</SocialImpact>
+        </statOffsets>
+        <statFactors>
+          <VEF_NegativeThoughtDurationFactor>0.6</VEF_NegativeThoughtDurationFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="DanZinagri.Muriden">
+    <defName>BT_Capybara</defName>
+    <!-- Artigasen, choerites -->
+    <xenotypes>
+      <li>Artigasen</li>
+      <li>Choerites</li>
+    </xenotypes>
+    <hediff>BT_Taste_Capybara</hediff>
+  </BloodTastes.BloodTasteDef>
+
+</Defs>

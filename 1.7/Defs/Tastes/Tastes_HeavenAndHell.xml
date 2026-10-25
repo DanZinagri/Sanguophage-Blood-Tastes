@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Angels and demons. Each taste is a hediff plus the BloodTasteDef listing the xenotypes that give it; both
+       carry MayRequireAnyOf for those xenotypes' mods, so neither loads without one. Effects from a framework
+       (SM_ = Big and Small, VEF_ / VEF. = Vanilla Expanded, EBSG_ = EBSG) are only used where every listed mod
+       requires that framework. -->
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="RedMattis.Heaven,Sovereign.SeraphimReborn,Sov.Nephilim">
+    <defName>BT_Taste_Angelic</defName>
+    <label>angelic blood</label>
+    <description>Bright, clean blood with a faint psychic hum, from angels and their kin. The drinker feels calm, gentle and hard to break.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <MentalBreakThreshold>-0.05</MentalBreakThreshold>
+          <SocialImpact>0.1</SocialImpact>
+          <PsychicSensitivity>0.1</PsychicSensitivity>
+          <MedicalTendQuality>0.1</MedicalTendQuality>
+          <PainShockThreshold>0.1</PainShockThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="RedMattis.Heaven,Sovereign.SeraphimReborn,Sov.Nephilim">
+    <defName>BT_Angelic</defName>
+    <!-- Malakim, Cherubim, Seraphim, authority, Nephilim, Nephilim -->
+    <xenotypes>
+      <li>BS_Malakim</li>
+      <li>GS_Cherubim</li>
+      <li>GS_Seraphim</li>
+      <li>BS_Authority</li>
+      <li>BS_Nephilim</li>
+      <li>GS_Nephilim</li>
+    </xenotypes>
+    <hediff>BT_Taste_Angelic</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="RedMattis.Heaven">
+    <defName>BT_Taste_Fallen</defName>
+    <label>fallen blood</label>
+    <description>Blood of a fallen watcher. Forbidden knowledge seeps from it, and a little unease.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <GlobalLearningFactor>0.2</GlobalLearningFactor>
+          <PsychicSensitivity>0.15</PsychicSensitivity>
+          <MentalBreakThreshold>0.02</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="RedMattis.Heaven">
+    <defName>BT_Fallen</defName>
+    <!-- Grigori, Satan -->
+    <xenotypes>
+      <li>BS_Grigori</li>
+      <li>BS_Satan</li>
+    </xenotypes>
+    <hediff>BT_Taste_Fallen</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="RedMattis.BigSmall.Core,RedMattis.Heaven,RedMattis.Undead,ElSov.Beliar">
+    <defName>BT_Taste_Infernal</defName>
+    <label>infernal blood</label>
+    <description>Blood that smells of brimstone. Heat no longer bothers the drinker, and their temper runs hot too.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <ComfyTemperatureMax>12</ComfyTemperatureMax>
+          <ArmorRating_Heat>0.2</ArmorRating_Heat>
+          <MentalBreakThreshold>0.02</MentalBreakThreshold>
+        </statOffsets>
+        <statFactors>
+          <MeleeDamageFactor>1.1</MeleeDamageFactor>
+          <Flammability>0.5</Flammability>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="RedMattis.BigSmall.Core,RedMattis.Heaven,RedMattis.Undead,ElSov.Beliar">
+    <defName>BT_Infernal</defName>
+    <!-- Imp, Hellguard, Gatekeeper, Beliar -->
+    <xenotypes>
+      <li>VU_Imp</li>
+      <li>VU_Hellguard</li>
+      <li>VU_Gatekeeper</li>
+      <li>BX_Beliar</li>
+    </xenotypes>
+    <hediff>BT_Taste_Infernal</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="RedMattis.BigSmall.Core,RedMattis.Heaven,RedMattis.Undead">
+    <defName>BT_Taste_Temptress</defName>
+    <label>temptress blood</label>
+    <description>Sweet, intoxicating demon blood. The drinker becomes magnetic and tireless.</description>
+    <stages>
+      <li>
+        <restFallFactor>0.8</restFallFactor>
+        <statOffsets>
+          <SocialImpact>0.2</SocialImpact>
+          <NegotiationAbility>0.15</NegotiationAbility>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="RedMattis.BigSmall.Core,RedMattis.Heaven,RedMattis.Undead">
+    <defName>BT_Temptress</defName>
+    <!-- Succubus, Lilim -->
+    <xenotypes>
+      <li>VU_Succubus</li>
+      <li>BS_Lilim</li>
+    </xenotypes>
+    <hediff>BT_Taste_Temptress</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="RedMattis.Heaven">
+    <defName>BT_Taste_Glutton</defName>
+    <label>glutton blood</label>
+    <description>Blood from a creature that never stops eating. The hunger is contagious, but so is the strength.</description>
+    <stages>
+      <li>
+        <hungerRateFactor>1.25</hungerRateFactor>
+        <statOffsets>
+          <EatingSpeed>0.5</EatingSpeed>
+          <InjuryHealingFactor>0.25</InjuryHealingFactor>
+        </statOffsets>
+        <statFactors>
+          <MeleeDamageFactor>1.1</MeleeDamageFactor>
+        </statFactors>
+        <makeImmuneTo>
+          <li>FoodPoisoning</li>
+        </makeImmuneTo>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="RedMattis.Heaven">
+    <defName>BT_Glutton</defName>
+    <!-- Glutton, Lil' Glutton -->
+    <xenotypes>
+      <li>BS_Glutton</li>
+      <li>BS_LilGlutton</li>
+    </xenotypes>
+    <hediff>BT_Taste_Glutton</hediff>
+  </BloodTastes.BloodTasteDef>
+
+</Defs>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Dwarves, gnomes and other small folk. Each taste is a hediff plus the BloodTasteDef listing the xenotypes that give it; both
+       carry MayRequireAnyOf for those xenotypes' mods, so neither loads without one. Effects from a framework
+       (SM_ = Big and Small, VEF_ / VEF. = Vanilla Expanded, EBSG_ = EBSG) are only used where every listed mod
+       requires that framework. -->
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="RedMattis.BigSmall,det.stoneborn">
+    <defName>BT_Taste_Dwarven</defName>
+    <label>dwarven blood</label>
+    <description>Hard, mineral-rich blood from the forge-folk. The drinker's hands itch for stone and metal.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <MiningSpeed>0.15</MiningSpeed>
+          <ConstructionSpeed>0.15</ConstructionSpeed>
+          <GeneralLaborSpeed>0.15</GeneralLaborSpeed>
+          <ToxicResistance>0.1</ToxicResistance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="RedMattis.BigSmall,det.stoneborn">
+    <defName>BT_Dwarven</defName>
+    <!-- Dvergr, stoneborn -->
+    <xenotypes>
+      <li>BS_Dwarf</li>
+      <li>Stoneborn</li>
+    </xenotypes>
+    <hediff>BT_Taste_Dwarven</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="RedMattis.BigSmall,det.halffoot,cyanobot.CyanobotsGenes">
+    <defName>BT_Taste_Smallfolk</defName>
+    <label>smallfolk blood</label>
+    <description>Quick, light blood from the little peoples of starships and workshops. The drinker feels nimble and frugal.</description>
+    <stages>
+      <li>
+        <hungerRateFactor>0.85</hungerRateFactor>
+        <statOffsets>
+          <WorkSpeedGlobal>0.05</WorkSpeedGlobal>
+          <MeleeDodgeChance>5</MeleeDodgeChance>
+        </statOffsets>
+        <statFactors>
+          <SM_BodySizeMultiplier MayRequire="RedMattis.BetterPrerequisites">0.9</SM_BodySizeMultiplier>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="RedMattis.BigSmall,det.halffoot,cyanobot.CyanobotsGenes">
+    <defName>BT_Smallfolk</defName>
+    <!-- Nisse, half-foot, fairy -->
+    <xenotypes>
+      <li>BS_Gnome</li>
+      <li>DV_Halffoot</li>
+      <li>CYB_Fairy</li>
+    </xenotypes>
+    <hediff>BT_Taste_Smallfolk</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="RedMattis.BigSmall">
+    <defName>BT_Taste_Redcap</defName>
+    <label>redcap blood</label>
+    <description>Redcap blood is wild and murderous. The drinker barely needs to sleep and wants very much to hurt someone.</description>
+    <stages>
+      <li>
+        <restFallFactor>0.8</restFallFactor>
+        <statOffsets>
+          <MoveSpeed>0.4</MoveSpeed>
+          <MentalBreakThreshold>0.03</MentalBreakThreshold>
+        </statOffsets>
+        <statFactors>
+          <MeleeDamageFactor>1.15</MeleeDamageFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="RedMattis.BigSmall">
+    <defName>BT_Redcap</defName>
+    <!-- Redcap -->
+    <xenotypes>
+      <li>BS_Redcap</li>
+    </xenotypes>
+    <hediff>BT_Taste_Redcap</hediff>
+  </BloodTastes.BloodTasteDef>
+
+</Defs>

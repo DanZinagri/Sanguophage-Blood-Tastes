@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Soldiers, psychics and oddities. Each taste is a hediff plus the BloodTasteDef listing the xenotypes that give it; both
+       carry MayRequireAnyOf for those xenotypes' mods, so neither loads without one. Effects from a framework
+       (SM_ = Big and Small, VEF_ / VEF. = Vanilla Expanded, EBSG_ = EBSG) are only used where every listed mod
+       requires that framework. -->
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="cyanobot.CyanobotsGenes,ICC.FOV.ORBITER,Rimsenal.Askbarn,det.keshig,pesky.bulwark,Rimsenal.Zohar">
+    <defName>BT_Taste_Soldier</defName>
+    <label>soldier's blood</label>
+    <description>Blood engineered for war. Discipline and pain tolerance come with it.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <PainShockThreshold>0.1</PainShockThreshold>
+          <MentalBreakThreshold>-0.03</MentalBreakThreshold>
+        </statOffsets>
+        <statFactors>
+          <IncomingDamageFactor>0.93</IncomingDamageFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="cyanobot.CyanobotsGenes,ICC.FOV.ORBITER,Rimsenal.Askbarn,det.keshig,pesky.bulwark,Rimsenal.Zohar">
+    <defName>BT_Soldier</defName>
+    <!-- biodrone, baseliner, Uredd, keshig, bulwark, Zohar -->
+    <xenotypes>
+      <li>Biodrone</li>
+      <li>Battleroid</li>
+      <li>Uredd</li>
+      <li>DV_Keshig</li>
+      <li>Bulwark</li>
+      <li>Zohar</li>
+    </xenotypes>
+    <hediff>BT_Taste_Soldier</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="Rimsenal.Askbarn">
+    <defName>BT_Taste_Askbarn</defName>
+    <label>åskbarn blood</label>
+    <description>Fragile, electric blood from a failed super-soldier line. The drinker's eyes and mind sharpen.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <GlobalLearningFactor>0.1</GlobalLearningFactor>
+        </statOffsets>
+        <statFactors>
+          <AimingDelayFactor>0.85</AimingDelayFactor>
+        </statFactors>
+        <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.1</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="Rimsenal.Askbarn">
+    <defName>BT_Askbarn</defName>
+    <!-- Åskbarn -->
+    <xenotypes>
+      <li>Askbarn</li>
+    </xenotypes>
+    <hediff>BT_Taste_Askbarn</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="Sov.Tenmo">
+    <defName>BT_Taste_Assassin</defName>
+    <label>assassin blood</label>
+    <description>Silent, faceless blood from a geist clan. The drinker slips through shadows.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <MeleeDodgeChance>6</MeleeDodgeChance>
+          <HuntingStealth>0.2</HuntingStealth>
+        </statOffsets>
+        <statFactors>
+          <MeleeDamageFactor>1.1</MeleeDamageFactor>
+          <EBSG_OutgoingDamageFactor_Humanlike>1.15</EBSG_OutgoingDamageFactor_Humanlike>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="Sov.Tenmo">
+    <defName>BT_Assassin</defName>
+    <!-- Geist -->
+    <xenotypes>
+      <li>GS_Geist</li>
+    </xenotypes>
+    <hediff>BT_Taste_Assassin</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="cyanobot.CyanobotsGenes">
+    <defName>BT_Taste_Psychic</defName>
+    <label>psychic blood</label>
+    <description>Psychically saturated blood. The world gets louder.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <PsychicSensitivity>0.25</PsychicSensitivity>
+          <MentalBreakThreshold>0.02</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="VEF.AnimalBehaviours.HediffCompProperties_PsyfocusRegeneration">
+        <rateInTicks>2500</rateInTicks>
+        <regenAmount>0.05</regenAmount>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="cyanobot.CyanobotsGenes">
+    <defName>BT_Psychic</defName>
+    <!-- psycrux, thrall -->
+    <xenotypes>
+      <li>CYB_Psycrux</li>
+      <li>CYB_Thrall</li>
+    </xenotypes>
+    <hediff>BT_Taste_Psychic</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="sarg.alphagenes">
+    <defName>BT_Taste_MindDevourer</defName>
+    <label>mind devourer blood</label>
+    <description>Eldritch blood that whispers. The drinker understands too much, too fast.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <PsychicSensitivity>0.4</PsychicSensitivity>
+          <GlobalLearningFactor>0.2</GlobalLearningFactor>
+          <MentalBreakThreshold>0.04</MentalBreakThreshold>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.05</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <comps>
+      <li Class="VEF.AnimalBehaviours.HediffCompProperties_PsyfocusRegeneration">
+        <rateInTicks>2500</rateInTicks>
+        <regenAmount>0.05</regenAmount>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="sarg.alphagenes">
+    <defName>BT_MindDevourer</defName>
+    <!-- mind devourer -->
+    <xenotypes>
+      <li>AG_MindDevourer</li>
+    </xenotypes>
+    <hediff>BT_Taste_MindDevourer</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="RedMattis.MoreXenos">
+    <defName>BT_Taste_Mimic</defName>
+    <label>mimic blood</label>
+    <description>Shapeshifter blood that won't settle on one taste. The drinker becomes harder to read.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <SocialImpact>0.1</SocialImpact>
+          <MeleeDodgeChance>5</MeleeDodgeChance>
+          <HuntingStealth>0.1</HuntingStealth>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="RedMattis.MoreXenos">
+    <defName>BT_Mimic</defName>
+    <!-- mimic, parasite -->
+    <xenotypes>
+      <li>BS_Mimic</li>
+      <li>BS_Parasite</li>
+    </xenotypes>
+    <hediff>BT_Taste_Mimic</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="RedMattis.MoreXenos,sarg.alphagenes">
+    <defName>BT_Taste_Aberrant</defName>
+    <label>aberrant blood</label>
+    <description>Malformed, wrong-tasting blood from a failed experiment. It numbs the body and sours the mind.</description>
+    <stages>
+      <li>
+        <painFactor>0.75</painFactor>
+        <statOffsets>
+          <MentalBreakThreshold>0.03</MentalBreakThreshold>
+          <SocialImpact>-0.05</SocialImpact>
+        </statOffsets>
+        <statFactors>
+          <IncomingDamageFactor>0.95</IncomingDamageFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="RedMattis.MoreXenos,sarg.alphagenes">
+    <defName>BT_Aberrant</defName>
+    <!-- abomination, wretch -->
+    <xenotypes>
+      <li>BS_Abomination</li>
+      <li>AG_Wretch</li>
+    </xenotypes>
+    <hediff>BT_Taste_Aberrant</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="cyanobot.CyanobotsGenes">
+    <defName>BT_Taste_Wist</defName>
+    <label>wist blood</label>
+    <description>Blood of a battlefield medic, laced with clotting agents. The drinker's hands find wounds by instinct.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <MedicalTendQuality>0.15</MedicalTendQuality>
+          <MedicalTendSpeed>0.15</MedicalTendSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="cyanobot.CyanobotsGenes">
+    <defName>BT_Wist</defName>
+    <!-- wist -->
+    <xenotypes>
+      <li>CYB_Wist</li>
+    </xenotypes>
+    <hediff>BT_Taste_Wist</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="sarg.alphagenes">
+    <defName>BT_Taste_Forsaken</defName>
+    <label>forsaken blood</label>
+    <description>Ancient blood from a fallen empire. Half-memories of lost knowledge surface in the drinker's mind.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <GlobalLearningFactor>0.15</GlobalLearningFactor>
+          <ResearchSpeed>0.1</ResearchSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="sarg.alphagenes">
+    <defName>BT_Forsaken</defName>
+    <!-- forsaken -->
+    <xenotypes>
+      <li>AG_Forsaken</li>
+    </xenotypes>
+    <hediff>BT_Taste_Forsaken</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="sarg.alphagenes">
+    <defName>BT_Taste_Nereid</defName>
+    <label>nereid blood</label>
+    <description>Briny abyssal blood. Cold water would feel like home.</description>
+    <stages>
+      <li>
+        <naturalHealingFactor>1.25</naturalHealingFactor>
+        <statOffsets>
+          <ComfyTemperatureMin>-6</ComfyTemperatureMin>
+          <MoveSpeed>0.1</MoveSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="VEF.AnimalBehaviours.HediffCompProperties_Waterstriding"/>
+    </comps>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="sarg.alphagenes">
+    <defName>BT_Nereid</defName>
+    <!-- nereid -->
+    <xenotypes>
+      <li>AG_Nereid</li>
+    </xenotypes>
+    <hediff>BT_Taste_Nereid</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="ElSov.Highborn,Sovereign.bnuy,RedMattis.LamiasAndOtherSnakes">
+    <defName>BT_Taste_Honeyed</defName>
+    <label>honeyed blood</label>
+    <description>Blood made to be adored. The drinker carries some of that allure with them.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <SocialImpact>0.15</SocialImpact>
+          <NegotiationAbility>0.1</NegotiationAbility>
+          <MentalBreakThreshold>-0.02</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="ElSov.Highborn,Sovereign.bnuy,RedMattis.LamiasAndOtherSnakes">
+    <defName>BT_Honeyed</defName>
+    <!-- Highborn, Starlet, Siren -->
+    <xenotypes>
+      <li>HBX_Highborn</li>
+      <li>GS_Starlet</li>
+      <li>LoS_Siren</li>
+    </xenotypes>
+    <hediff>BT_Taste_Honeyed</hediff>
+  </BloodTastes.BloodTasteDef>
+
+</Defs>

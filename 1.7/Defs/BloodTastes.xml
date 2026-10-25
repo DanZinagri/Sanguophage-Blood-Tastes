@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Vanilla xenotype tastes. Modded xenotypes that are close variants share these (they are listed by defName,
+       so a missing mod just means a skipped entry). Tastes for other modded xenotypes live in Tastes/. -->
+
+  <BloodTastes.BloodTasteDef>
+    <defName>BT_Baseliner</defName>
+    <xenotypes>
+      <li>Baseliner</li>
+      <li>BreadMo_AAT_Baseliner</li>
+      <li>Cinder_Xenotype</li>
+    </xenotypes>
+    <hediff>BT_Taste_Baseliner</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <BloodTastes.BloodTasteDef>
+    <defName>BT_Neanderthal</defName>
+    <xenotypes>
+      <li>Neanderthal</li>
+    </xenotypes>
+    <hediff>BT_Taste_Neanderthal</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <BloodTastes.BloodTasteDef>
+    <defName>BT_Hussar</defName>
+    <xenotypes>
+      <li>Hussar</li>
+      <li>VREH_Uhlan</li>
+    </xenotypes>
+    <hediff>BT_Taste_Hussar</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <BloodTastes.BloodTasteDef>
+    <defName>BT_Sanguophage</defName>
+    <xenotypes>
+      <li>Sanguophage</li>
+      <li>VRE_Bruxa</li>
+      <li>RS_Charmweaver</li>
+      <li>VU_Dracul_HalfVampire</li>
+    </xenotypes>
+    <hediff>BT_Taste_Sanguophage</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <BloodTastes.BloodTasteDef>
+    <defName>BT_Genie</defName>
+    <xenotypes>
+      <li>Genie</li>
+    </xenotypes>
+    <hediff>BT_Taste_Genie</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <BloodTastes.BloodTasteDef>
+    <defName>BT_Highmate</defName>
+    <xenotypes>
+      <li>Highmate</li>
+      <li>VRE_Lowmate</li>
+    </xenotypes>
+    <hediff>BT_Taste_Highmate</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <BloodTastes.BloodTasteDef>
+    <defName>BT_Impid</defName>
+    <xenotypes>
+      <li>Impid</li>
+      <li>AG_Efreet</li>
+    </xenotypes>
+    <hediff>BT_Taste_Impid</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <BloodTastes.BloodTasteDef>
+    <defName>BT_Pigskin</defName>
+    <xenotypes>
+      <li>Pigskin</li>
+      <li>VRE_Boarskin</li>
+    </xenotypes>
+    <hediff>BT_Taste_Pigskin</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <BloodTastes.BloodTasteDef>
+    <defName>BT_Waster</defName>
+    <xenotypes>
+      <li>Waster</li>
+      <li>AG_Helixien</li>
+      <li>DV_Bogleg</li>
+    </xenotypes>
+    <hediff>BT_Taste_Waster</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <BloodTastes.BloodTasteDef>
+    <defName>BT_Yttakin</defName>
+    <xenotypes>
+      <li>Yttakin</li>
+    </xenotypes>
+    <hediff>BT_Taste_Yttakin</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <BloodTastes.BloodTasteDef>
+    <defName>BT_Dirtmole</defName>
+    <xenotypes>
+      <li>Dirtmole</li>
+      <li>AG_Lapis</li>
+      <li>CYB_Shulk</li>
+    </xenotypes>
+    <hediff>BT_Taste_Dirtmole</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <BloodTastes.BloodTasteDef MayRequire="Ludeon.RimWorld.Odyssey">
+    <defName>BT_Starjack</defName>
+    <xenotypes>
+      <li>Starjack</li>
+    </xenotypes>
+    <hediff>BT_Taste_Starjack</hediff>
+  </BloodTastes.BloodTasteDef>
+
+</Defs>

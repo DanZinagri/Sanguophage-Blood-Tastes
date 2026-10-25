@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- VRE - Waster overhauls the vanilla waster and brings VEF, so the vanilla waster taste gains VEF
+       effects. loadFolders only loads this folder while VRE - Waster is active. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/HediffDef[defName="BT_Taste_Waster"]</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/HediffDef[defName="BT_Taste_Waster"]/stages/li/statFactors</xpath>
+        <match Class="PatchOperationAdd">
+          <xpath>/Defs/HediffDef[defName="BT_Taste_Waster"]/stages/li/statFactors</xpath>
+          <value><VEF_NegativeThoughtDurationFactor>0.8</VEF_NegativeThoughtDurationFactor></value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+          <xpath>/Defs/HediffDef[defName="BT_Taste_Waster"]/stages/li</xpath>
+          <value><statFactors><VEF_NegativeThoughtDurationFactor>0.8</VEF_NegativeThoughtDurationFactor></statFactors></value>
+        </nomatch>
+      </li>
+      </operations>
+    </match>
+  </Operation>
+
+</Patch>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Centaurs. Each taste is a hediff plus the BloodTasteDef listing the xenotypes that give it; both
+       carry MayRequireAnyOf for those xenotypes' mods, so neither loads without one. Effects from a framework
+       (SM_ = Big and Small, VEF_ / VEF. = Vanilla Expanded, EBSG_ = EBSG) are only used where every listed mod
+       requires that framework. -->
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="DZ.BSCentaursExpanded">
+    <defName>BT_Taste_Centaur</defName>
+    <label>centaur blood</label>
+    <description>Strong equine blood. The drinker's legs want to run.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>0.4</MoveSpeed>
+          <CarryingCapacity>20</CarryingCapacity>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="DZ.BSCentaursExpanded">
+    <defName>BT_Centaur</defName>
+    <!-- centaur, dairy centaur, dire centaur, wooly centaur, racing centaur -->
+    <xenotypes>
+      <li>DZ_Centaur</li>
+      <li>DZ_DairyCentaur</li>
+      <li>DZ_DireCentaur</li>
+      <li>DZ_WoolyCentaur</li>
+      <li>DZ_Racing_Centaur</li>
+    </xenotypes>
+    <hediff>BT_Taste_Centaur</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="DZ.BSCentaursExpanded">
+    <defName>BT_Taste_Thrumbo</defName>
+    <label>thrumbo blood</label>
+    <description>Blood of thrumbo stock: shaggy, resilient and slow to bleed.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <InjuryHealingFactor>0.5</InjuryHealingFactor>
+          <ComfyTemperatureMin>-8</ComfyTemperatureMin>
+        </statOffsets>
+        <statFactors>
+          <IncomingDamageFactor>0.9</IncomingDamageFactor>
+          <MeleeDamageFactor>1.1</MeleeDamageFactor>
+          <SM_BodySizeMultiplier>1.1</SM_BodySizeMultiplier>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="DZ.BSCentaursExpanded">
+    <defName>BT_Thrumbo</defName>
+    <!-- thrumboran -->
+    <xenotypes>
+      <li>DZ_Thrumboran</li>
+    </xenotypes>
+    <hediff>BT_Taste_Thrumbo</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="DZ.BSCentaursExpanded">
+    <defName>BT_Taste_Nightmare</defName>
+    <label>nightmare blood</label>
+    <description>Blood of a nightmare. Sleep becomes almost unnecessary, and the drinker's dreams belong to someone else.</description>
+    <stages>
+      <li>
+        <restFallFactor>0.5</restFallFactor>
+        <statOffsets>
+          <PsychicSensitivity>0.2</PsychicSensitivity>
+          <MoveSpeed>0.4</MoveSpeed>
+          <MentalBreakThreshold>0.03</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="DZ.BSCentaursExpanded">
+    <defName>BT_Nightmare</defName>
+    <!-- Nightmare centaur -->
+    <xenotypes>
+      <li>DZ_Nightmare_Centaur</li>
+    </xenotypes>
+    <hediff>BT_Taste_Nightmare</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="DZ.BSCentaursExpanded">
+    <defName>BT_Taste_Unicorn</defName>
+    <label>unicorn blood</label>
+    <description>Unicorn blood heals almost anything, but drinking it is an act others find hard to forgive.</description>
+    <stages>
+      <li>
+        <painFactor>0.8</painFactor>
+        <statOffsets>
+          <ImmunityGainSpeed>0.3</ImmunityGainSpeed>
+          <InjuryHealingFactor>0.5</InjuryHealingFactor>
+          <ToxicResistance>0.3</ToxicResistance>
+          <MentalBreakThreshold>-0.06</MentalBreakThreshold>
+          <SocialImpact>-0.1</SocialImpact>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="DZ.BSCentaursExpanded">
+    <defName>BT_Unicorn</defName>
+    <!-- unicorn centaur -->
+    <xenotypes>
+      <li>DZ_Unicorn_Centaur</li>
+    </xenotypes>
+    <hediff>BT_Taste_Unicorn</hediff>
+  </BloodTastes.BloodTasteDef>
+
+</Defs>

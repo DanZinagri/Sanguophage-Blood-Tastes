@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Slime-bodied xenotypes (true slimes can't be bitten: Big and Small blocks them). Each taste is a hediff plus the BloodTasteDef listing the xenotypes that give it; both
+       carry MayRequireAnyOf for those xenotypes' mods, so neither loads without one. Effects from a framework
+       (SM_ = Big and Small, VEF_ / VEF. = Vanilla Expanded, EBSG_ = EBSG) are only used where every listed mod
+       requires that framework. -->
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="sarg.alphagenes">
+    <defName>BT_Taste_Slime</defName>
+    <label>slime blood</label>
+    <description>Gelatinous, barely-blood. It soaks into the drinker's tissues and patches them over.</description>
+    <stages>
+      <li>
+        <naturalHealingFactor>1.5</naturalHealingFactor>
+        <hungerRateFactor>0.85</hungerRateFactor>
+        <statFactors>
+          <IncomingDamageFactor>0.95</IncomingDamageFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="sarg.alphagenes">
+    <defName>BT_Slime</defName>
+    <!-- taukai, fleetkind -->
+    <xenotypes>
+      <li>AG_Taukai</li>
+      <li>AG_Fleetkind</li>
+    </xenotypes>
+    <hediff>BT_Taste_Slime</hediff>
+  </BloodTastes.BloodTasteDef>
+
+</Defs>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- VRE - Starjack overhauls the vanilla starjack and brings VEF, so the vanilla starjack taste gains VEF
+       effects. loadFolders only loads this folder while VRE - Starjack is active. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/HediffDef[defName="BT_Taste_Starjack"]</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/HediffDef[defName="BT_Taste_Starjack"]/stages/li/statOffsets</xpath>
+        <match Class="PatchOperationAdd">
+          <xpath>/Defs/HediffDef[defName="BT_Taste_Starjack"]/stages/li/statOffsets</xpath>
+          <value><VEF_RangedDodgeChance>0.1</VEF_RangedDodgeChance></value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+          <xpath>/Defs/HediffDef[defName="BT_Taste_Starjack"]/stages/li</xpath>
+          <value><statOffsets><VEF_RangedDodgeChance>0.1</VEF_RangedDodgeChance></statOffsets></value>
+        </nomatch>
+      </li>
+      </operations>
+    </match>
+  </Operation>
+
+</Patch>

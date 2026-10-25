@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Yokai and cat-folk. Each taste is a hediff plus the BloodTasteDef listing the xenotypes that give it; both
+       carry MayRequireAnyOf for those xenotypes' mods, so neither loads without one. Effects from a framework
+       (SM_ = Big and Small, VEF_ / VEF. = Vanilla Expanded, EBSG_ = EBSG) are only used where every listed mod
+       requires that framework. -->
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="RedMattis.Yokai">
+    <defName>BT_Taste_Oni</defName>
+    <label>oni blood</label>
+    <description>Rowdy oni blood, with a hint of sake. The drinker wants a fight and can take a hit.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <MentalBreakThreshold>0.02</MentalBreakThreshold>
+        </statOffsets>
+        <statFactors>
+          <MeleeDamageFactor>1.15</MeleeDamageFactor>
+          <IncomingDamageFactor>0.95</IncomingDamageFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="RedMattis.Yokai">
+    <defName>BT_Oni</defName>
+    <!-- blue oni, great blue oni, great red oni, lesser oni, red oni -->
+    <xenotypes>
+      <li>BS_BlueOni</li>
+      <li>BS_GreatBlueOni</li>
+      <li>BS_GreatRedOni</li>
+      <li>BS_LesserOni</li>
+      <li>BS_RedOni</li>
+    </xenotypes>
+    <hediff>BT_Taste_Oni</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="RedMattis.Yokai">
+    <defName>BT_Taste_Kitsune</defName>
+    <label>kitsune blood</label>
+    <description>Fox-spirit blood that tingles with psychic power. The drinker feels clever, charming and hard to pin down.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <PsychicSensitivity>0.3</PsychicSensitivity>
+          <SocialImpact>0.15</SocialImpact>
+          <MeleeDodgeChance>5</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="RedMattis.Yokai">
+    <defName>BT_Kitsune</defName>
+    <!-- Kitsune -->
+    <xenotypes>
+      <li>BS_Kitsune</li>
+    </xenotypes>
+    <hediff>BT_Taste_Kitsune</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="DanZinagri.BigSmall.Catfolk,RedMattis.Yokai,Erin.AuronyaBiotech,cyanobot.CyanobotsGenes,Erin.Auraeyl">
+    <defName>BT_Taste_Feline</defName>
+    <label>feline blood</label>
+    <description>Lithe cat blood. The drinker moves quietly and lands on their feet.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>0.3</MoveSpeed>
+          <MeleeDodgeChance>5</MeleeDodgeChance>
+          <HuntingStealth>0.1</HuntingStealth>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="DanZinagri.BigSmall.Catfolk,RedMattis.Yokai,Erin.AuronyaBiotech,cyanobot.CyanobotsGenes,Erin.Auraeyl">
+    <defName>BT_Feline</defName>
+    <!-- catfolk, Pantherakin, Werecat, Cait Sith, nekomata, auronya, kitlin, auraeyl -->
+    <xenotypes>
+      <li>DZ_Catfolk</li>
+      <li>DZ_Panthera</li>
+      <li>DZ_WereCat</li>
+      <li>DZ_CaitSith</li>
+      <li>BS_Nekomata</li>
+      <li>ERN_Auronya</li>
+      <li>Kitlin</li>
+      <li>ERN_Auraeyl</li>
+    </xenotypes>
+    <hediff>BT_Taste_Feline</hediff>
+  </BloodTastes.BloodTasteDef>
+
+</Defs>

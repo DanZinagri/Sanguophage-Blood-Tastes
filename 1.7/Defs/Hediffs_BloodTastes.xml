@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Placeholder buffs, one per vanilla xenotype. Values are first guesses for tuning. Each lasts a day; a
+       repeat bite on the same xenotype resets the timer. -->
+
+  <HediffDef Abstract="True" Name="BT_BloodTasteBase">
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.85, 0.25, 0.3)</defaultLabelColor>
+    <isBad>false</isBad>
+    <maxSeverity>1</maxSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>60000~60000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase">
+    <defName>BT_Taste_Baseliner</defName>
+    <label>baseliner blood</label>
+    <description>The plain, familiar taste of unaltered human blood. Comforting in its simplicity.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <MentalBreakThreshold>-0.03</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase">
+    <defName>BT_Taste_Neanderthal</defName>
+    <label>neanderthal blood</label>
+    <description>Thick, heavy blood from a neanderthal. It hardens the body and dulls the mind.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <PainShockThreshold>0.05</PainShockThreshold>
+          <GlobalLearningFactor>-0.1</GlobalLearningFactor>
+        </statOffsets>
+        <statFactors>
+          <IncomingDamageFactor>0.9</IncomingDamageFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase">
+    <defName>BT_Taste_Hussar</defName>
+    <label>hussar blood</label>
+    <description>Hussar blood still carries traces of the combat-tuned chemistry that drives them.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <MeleeHitChance>2</MeleeHitChance>
+        </statOffsets>
+        <statFactors>
+          <AimingDelayFactor>0.9</AimingDelayFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase">
+    <defName>BT_Taste_Sanguophage</defName>
+    <label>sanguophage blood</label>
+    <description>Blood of another sanguophage, dense with archites. Hemogen comes easier.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <HemogenGainFactor>0.25</HemogenGainFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase">
+    <defName>BT_Taste_Genie</defName>
+    <label>genie blood</label>
+    <description>Genie blood leaves a sharp, clear-headed aftertaste.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <GlobalLearningFactor>0.15</GlobalLearningFactor>
+          <ResearchSpeed>0.1</ResearchSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase">
+    <defName>BT_Taste_Highmate</defName>
+    <label>highmate blood</label>
+    <description>Highmate blood is sweet and warm, and leaves its drinker unusually charming.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <SocialImpact>0.15</SocialImpact>
+          <MentalBreakThreshold>-0.03</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase">
+    <defName>BT_Taste_Impid</defName>
+    <label>impid blood</label>
+    <description>Hot, quick impid blood. The drinker feels restless and light on their feet.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>0.3</MoveSpeed>
+          <ComfyTemperatureMax>6</ComfyTemperatureMax>
+        </statOffsets>
+        <statFactors>
+          <Flammability>0.5</Flammability>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase">
+    <defName>BT_Taste_Pigskin</defName>
+    <label>pigskin blood</label>
+    <description>Rich pigskin blood. It sits heavy in the stomach and bolsters the immune system.</description>
+    <stages>
+      <li>
+        <hungerRateFactor>0.85</hungerRateFactor>
+        <statOffsets>
+          <ImmunityGainSpeed>0.1</ImmunityGainSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase">
+    <defName>BT_Taste_Waster</defName>
+    <label>waster blood</label>
+    <description>Waster blood is gritty and chemical. It numbs pain and shrugs off toxins.</description>
+    <stages>
+      <li>
+        <painFactor>0.9</painFactor>
+        <statOffsets>
+          <ToxicResistance>0.2</ToxicResistance>
+          <ToxicEnvironmentResistance>0.2</ToxicEnvironmentResistance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase">
+    <defName>BT_Taste_Yttakin</defName>
+    <label>yttakin blood</label>
+    <description>Yttakin blood runs cold and strong.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <ComfyTemperatureMin>-8</ComfyTemperatureMin>
+        </statOffsets>
+        <statFactors>
+          <MeleeDamageFactor>1.05</MeleeDamageFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase">
+    <defName>BT_Taste_Dirtmole</defName>
+    <label>dirtmole blood</label>
+    <description>Earthy dirtmole blood. The drinker feels an urge to dig.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <MiningSpeed>0.2</MiningSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequire="Ludeon.RimWorld.Odyssey">
+    <defName>BT_Taste_Starjack</defName>
+    <label>starjack blood</label>
+    <description>Starjack blood is thin and strangely pressurised, adapted for the void.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <VacuumResistance>0.2</VacuumResistance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Elves. Each taste is a hediff plus the BloodTasteDef listing the xenotypes that give it; both
+       carry MayRequireAnyOf for those xenotypes' mods, so neither loads without one. Effects from a framework
+       (SM_ = Big and Small, VEF_ / VEF. = Vanilla Expanded, EBSG_ = EBSG) are only used where every listed mod
+       requires that framework. -->
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="ICC.FOV.ELVES,VexedTrees980.RimElvesBiotech,DevDesigner.Elves,DevDesigner.Elves.Continued,cyanobot.CyanobotsGenes">
+    <defName>BT_Taste_Elven</defName>
+    <label>elven blood</label>
+    <description>Fine, long-lived blood. The drinker sees sharper and learns faster.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <GlobalLearningFactor>0.1</GlobalLearningFactor>
+          <SocialImpact>0.05</SocialImpact>
+        </statOffsets>
+        <statFactors>
+          <AimingDelayFactor>0.9</AimingDelayFactor>
+        </statFactors>
+        <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.1</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="ICC.FOV.ELVES,VexedTrees980.RimElvesBiotech,DevDesigner.Elves,DevDesigner.Elves.Continued,cyanobot.CyanobotsGenes">
+    <defName>BT_Elven</defName>
+    <!-- celestia elf, high elf, elve, high elf, changeling, glimmer -->
+    <xenotypes>
+      <li>TOV_CelestiaElf</li>
+      <li>TOV_HighElf</li>
+      <li>RE_Elve</li>
+      <li>DevDesigner_XenotypeHighElves</li>
+      <li>CYB_Changeling</li>
+      <li>CYB_Glimmer</li>
+    </xenotypes>
+    <hediff>BT_Taste_Elven</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="ICC.FOV.ELVES,DevDesigner.Elves,DevDesigner.Elves.Continued,RedMattis.BigSmall">
+    <defName>BT_Taste_DarkElf</defName>
+    <label>dark elf blood</label>
+    <description>Shadowed elven blood. The drinker moves like a whisper.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <MeleeDodgeChance>6</MeleeDodgeChance>
+          <MeleeHitChance>2</MeleeHitChance>
+          <HuntingStealth>0.15</HuntingStealth>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="ICC.FOV.ELVES,DevDesigner.Elves,DevDesigner.Elves.Continued,RedMattis.BigSmall">
+    <defName>BT_DarkElf</defName>
+    <!-- dark elf, dark elf, Svartalf -->
+    <xenotypes>
+      <li>TOV_DarkElf</li>
+      <li>DevDesigner_XenotypeDarkElves</li>
+      <li>BS_Svartalf</li>
+    </xenotypes>
+    <hediff>BT_Taste_DarkElf</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="ICC.FOV.ELVES,DevDesigner.Elves,DevDesigner.Elves.Continued">
+    <defName>BT_Taste_WildElf</defName>
+    <label>wild elf blood</label>
+    <description>Green-tasting woodland blood. The drinker feels at home among trees and game trails.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <PlantWorkSpeed>0.15</PlantWorkSpeed>
+          <HuntingStealth>0.1</HuntingStealth>
+          <MoveSpeed>0.2</MoveSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="ICC.FOV.ELVES,DevDesigner.Elves,DevDesigner.Elves.Continued">
+    <defName>BT_WildElf</defName>
+    <!-- Wild Elf, wood elf -->
+    <xenotypes>
+      <li>TOV_WildElf</li>
+      <li>DevDesigner_XenotypeWoodElves</li>
+    </xenotypes>
+    <hediff>BT_Taste_WildElf</hediff>
+  </BloodTastes.BloodTasteDef>
+
+</Defs>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Plant and fungus folk. Each taste is a hediff plus the BloodTasteDef listing the xenotypes that give it; both
+       carry MayRequireAnyOf for those xenotypes' mods, so neither loads without one. Effects from a framework
+       (SM_ = Big and Small, VEF_ / VEF. = Vanilla Expanded, EBSG_ = EBSG) are only used where every listed mod
+       requires that framework. -->
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="vanillaracesexpanded.phytokin,sarg.alphagenes,pumpkin.morephytokinxenotypes,SaltBabe.DryadXenotypeRevival">
+    <defName>BT_Taste_Sap</defName>
+    <label>sap</label>
+    <description>Not blood at all but sweet tree-sap. It sustains the drinker like sunlight.</description>
+    <stages>
+      <li>
+        <hungerRateFactor>0.75</hungerRateFactor>
+        <statOffsets>
+          <PlantWorkSpeed>0.15</PlantWorkSpeed>
+          <ImmunityGainSpeed>0.1</ImmunityGainSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="vanillaracesexpanded.phytokin,sarg.alphagenes,pumpkin.morephytokinxenotypes,SaltBabe.DryadXenotypeRevival">
+    <defName>BT_Sap</defName>
+    <!-- animakin, gauranlenkin, poluxkin, ocularkin, archeankin, Dryad -->
+    <xenotypes>
+      <li>VRE_Animakin</li>
+      <li>VRE_Gauranlenkin</li>
+      <li>VRE_Poluxkin</li>
+      <li>VRE_Ocularkin</li>
+      <li>MPX_Xenotype_SourceSoilKin</li>
+      <li>Dryad_Xenotype</li>
+    </xenotypes>
+    <hediff>BT_Taste_Sap</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="pumpkin.morephytokinxenotypes">
+    <defName>BT_Taste_CarrionSap</defName>
+    <label>carrion sap</label>
+    <description>Black sap from a harbinger tree. It tastes of rot and deadens pain.</description>
+    <stages>
+      <li>
+        <painFactor>0.85</painFactor>
+        <statOffsets>
+          <ToxicResistance>0.2</ToxicResistance>
+        </statOffsets>
+        <statFactors>
+          <MeleeDamageFactor>1.1</MeleeDamageFactor>
+        </statFactors>
+      </li>
+    </stages>
+    <comps>
+      <li Class="VEF.AnimalBehaviours.HediffCompProperties_Regeneration">
+        <rateInTicks>600</rateInTicks>
+        <healAmount>0.1</healAmount>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="pumpkin.morephytokinxenotypes">
+    <defName>BT_CarrionSap</defName>
+    <!-- carrionkin, harbingerkin -->
+    <xenotypes>
+      <li>MPX_Xenotype_DeathTree</li>
+      <li>MPX_Xenotype_DeathTreeGuardian</li>
+    </xenotypes>
+    <hediff>BT_Taste_CarrionSap</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="vanillaracesexpanded.fungoid,sarg.alphagenes,BiomesTeam.GeneticsMushkin">
+    <defName>BT_Taste_Spore</defName>
+    <label>spore blood</label>
+    <description>Mycelium-laced blood. Spores take root briefly, knitting wounds and filtering toxins.</description>
+    <stages>
+      <li>
+        <hungerRateFactor>0.85</hungerRateFactor>
+        <statOffsets>
+          <ToxicResistance>0.2</ToxicResistance>
+          <InjuryHealingFactor>0.25</InjuryHealingFactor>
+        </statOffsets>
+        <makeImmuneTo>
+          <li>FoodPoisoning</li>
+        </makeImmuneTo>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="vanillaracesexpanded.fungoid,sarg.alphagenes,BiomesTeam.GeneticsMushkin">
+    <defName>BT_Spore</defName>
+    <!-- fungoid, mycomorph, mushkin, ironcap, necrospore, patchphae, crowncap, tallcap -->
+    <xenotypes>
+      <li>VRE_Fungoid</li>
+      <li>AG_Mycormorph</li>
+      <li>BGM_Mushkin</li>
+      <li>BGM_Ironcap</li>
+      <li>BGM_Necrospore</li>
+      <li>BGM_Patchphae</li>
+      <li>BGM_Sovereign</li>
+      <li>BGM_Tallcap</li>
+    </xenotypes>
+    <hediff>BT_Taste_Spore</hediff>
+  </BloodTastes.BloodTasteDef>
+
+</Defs>

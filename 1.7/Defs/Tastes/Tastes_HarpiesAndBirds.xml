@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Harpies and bird-folk. Each taste is a hediff plus the BloodTasteDef listing the xenotypes that give it; both
+       carry MayRequireAnyOf for those xenotypes' mods, so neither loads without one. Effects from a framework
+       (SM_ = Big and Small, VEF_ / VEF. = Vanilla Expanded, EBSG_ = EBSG) are only used where every listed mod
+       requires that framework. -->
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="DZ.BSHarpies">
+    <defName>BT_Taste_BloodHarpy</defName>
+    <label>blood harpy blood</label>
+    <description>Blood from a harpy that runs on hemogen. To a sanguophage it is pure, concentrated fuel.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <HemogenGainFactor>0.4</HemogenGainFactor>
+          <MoveSpeed>0.3</MoveSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="DZ.BSHarpies">
+    <defName>BT_BloodHarpy</defName>
+    <!-- blood harpy -->
+    <xenotypes>
+      <li>DZ_BloodHarpy</li>
+    </xenotypes>
+    <hediff>BT_Taste_BloodHarpy</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="DZ.BSHarpies">
+    <defName>BT_Taste_Vermillion</defName>
+    <label>vermillion blood</label>
+    <description>Archotech machines swarm in this blood, and they start rebuilding the drinker at once.</description>
+    <stages>
+      <li>
+        <naturalHealingFactor>1.5</naturalHealingFactor>
+        <painFactor>0.85</painFactor>
+        <statOffsets>
+          <InjuryHealingFactor>1</InjuryHealingFactor>
+          <ImmunityGainSpeed>0.1</ImmunityGainSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="VEF.AnimalBehaviours.HediffCompProperties_Regeneration">
+        <rateInTicks>600</rateInTicks>
+        <healAmount>0.1</healAmount>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="DZ.BSHarpies">
+    <defName>BT_Vermillion</defName>
+    <!-- vermillion harpy -->
+    <xenotypes>
+      <li>DZ_VermillionHarpy</li>
+    </xenotypes>
+    <hediff>BT_Taste_Vermillion</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="DZ.BSHarpies,det.venators">
+    <defName>BT_Taste_Raptor</defName>
+    <label>raptor blood</label>
+    <description>Keen-eyed hunter's blood. Distant things come into focus.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <HuntingStealth>0.1</HuntingStealth>
+          <MoveSpeed>0.2</MoveSpeed>
+        </statOffsets>
+        <statFactors>
+          <AimingDelayFactor>0.9</AimingDelayFactor>
+        </statFactors>
+        <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.1</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="DZ.BSHarpies,det.venators">
+    <defName>BT_Raptor</defName>
+    <!-- raptor harpy, garudakin harpy, venator -->
+    <xenotypes>
+      <li>DZ_RaptorHarpy</li>
+      <li>DZ_GarudakinHarpy</li>
+      <li>DV_Venator</li>
+    </xenotypes>
+    <hediff>BT_Taste_Raptor</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="DZ.BSHarpies">
+    <defName>BT_Taste_Fowl</defName>
+    <label>fowl blood</label>
+    <description>Homely bird blood. The drinker feels light, busy and up with the dawn.</description>
+    <stages>
+      <li>
+        <hungerRateFactor>0.85</hungerRateFactor>
+        <restFallFactor>0.9</restFallFactor>
+        <statOffsets>
+          <MoveSpeed>0.2</MoveSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="DZ.BSHarpies">
+    <defName>BT_Fowl</defName>
+    <!-- land harpy, poultry harpy -->
+    <xenotypes>
+      <li>DZ_LandHarpy</li>
+      <li>DZ_PoultryHarpy</li>
+    </xenotypes>
+    <hediff>BT_Taste_Fowl</hediff>
+  </BloodTastes.BloodTasteDef>
+
+</Defs>

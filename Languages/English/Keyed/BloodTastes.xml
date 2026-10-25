@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <BloodTastes_SettingsCategory>Sanguophage Blood Tastes</BloodTastes_SettingsCategory>
+  <BloodTastes_XenotypeTastes>Xenotype blood tastes</BloodTastes_XenotypeTastes>
+  <BloodTastes_XenotypeTastesTip>Bloodfeeding gives a buff that depends on the victim's xenotype.</BloodTastes_XenotypeTastesTip>
+  <BloodTastes_CopyDrugs>Drink the victim's drugs</BloodTastes_CopyDrugs>
+  <BloodTastes_CopyDrugsTip>For every drug high the victim has at the moment of the bite, the bloodfeeder takes one full dose of that drug: the high, tolerance, addiction risk, overdose risk, and how their ideology feels about drug use, exactly as if they had taken it themselves. An existing addiction is fed the same way.</BloodTastes_CopyDrugsTip>
+  <BloodTastes_ShowMote>Show what was tasted</BloodTastes_ShowMote>
+  <BloodTastes_ShowMoteTip>Floating text over the bloodfeeder naming the effects they gained.</BloodTastes_ShowMoteTip>
+</LanguageData>

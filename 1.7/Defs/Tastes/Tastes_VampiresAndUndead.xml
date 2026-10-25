@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Vampires. Each taste is a hediff plus the BloodTasteDef listing the xenotypes that give it; both
+       carry MayRequireAnyOf for those xenotypes' mods, so neither loads without one. Effects from a framework
+       (SM_ = Big and Small, VEF_ / VEF. = Vanilla Expanded, EBSG_ = EBSG) are only used where every listed mod
+       requires that framework. -->
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="vanillaracesexpanded.sanguophage,sarg.alphagenes">
+    <defName>BT_Taste_FeralKindred</defName>
+    <label>feral kindred blood</label>
+    <description>Blood of a monstrous archite strain. It burns with bloodlust, and the drinker feels quicker, stronger and hungrier.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>0.3</MoveSpeed>
+          <HemogenGainFactor>0.15</HemogenGainFactor>
+          <MentalBreakThreshold>0.02</MentalBreakThreshold>
+        </statOffsets>
+        <statFactors>
+          <MeleeDamageFactor>1.1</MeleeDamageFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="vanillaracesexpanded.sanguophage,sarg.alphagenes">
+    <defName>BT_FeralKindred</defName>
+    <!-- strigoi, ekkimian, malachai -->
+    <xenotypes>
+      <li>VRE_Strigoi</li>
+      <li>VRE_Ekkimian</li>
+      <li>AG_Malachai</li>
+    </xenotypes>
+    <hediff>BT_Taste_FeralKindred</hediff>
+  </BloodTastes.BloodTasteDef>
+
+</Defs>

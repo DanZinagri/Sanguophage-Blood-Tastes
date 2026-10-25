@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- VRE - Highmate overhauls the vanilla highmate and brings VEF, so the vanilla highmate taste gains VEF
+       effects. loadFolders only loads this folder while VRE - Highmate is active. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/HediffDef[defName="BT_Taste_Highmate"]</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/HediffDef[defName="BT_Taste_Highmate"]/stages/li/statFactors</xpath>
+        <match Class="PatchOperationAdd">
+          <xpath>/Defs/HediffDef[defName="BT_Taste_Highmate"]/stages/li/statFactors</xpath>
+          <value><VEF_MTBLovinFactor>0.6</VEF_MTBLovinFactor><VEF_PositiveThoughtDurationFactor>1.3</VEF_PositiveThoughtDurationFactor></value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+          <xpath>/Defs/HediffDef[defName="BT_Taste_Highmate"]/stages/li</xpath>
+          <value><statFactors><VEF_MTBLovinFactor>0.6</VEF_MTBLovinFactor><VEF_PositiveThoughtDurationFactor>1.3</VEF_PositiveThoughtDurationFactor></statFactors></value>
+        </nomatch>
+      </li>
+      </operations>
+    </match>
+  </Operation>
+
+</Patch>

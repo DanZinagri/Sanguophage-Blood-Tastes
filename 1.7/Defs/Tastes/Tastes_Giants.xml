@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Giants, trolls and titans. Each taste is a hediff plus the BloodTasteDef listing the xenotypes that give it; both
+       carry MayRequireAnyOf for those xenotypes' mods, so neither loads without one. Effects from a framework
+       (SM_ = Big and Small, VEF_ / VEF. = Vanilla Expanded, EBSG_ = EBSG) are only used where every listed mod
+       requires that framework. -->
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="RedMattis.BigSmall">
+    <defName>BT_Taste_Giant</defName>
+    <label>giant's blood</label>
+    <description>Blood from a towering laborer. The drinker feels broad and strong, if a little ponderous.</description>
+    <stages>
+      <li>
+        <hungerRateFactor>1.1</hungerRateFactor>
+        <statOffsets>
+          <CarryingCapacity>25</CarryingCapacity>
+          <MoveSpeed>-0.15</MoveSpeed>
+        </statOffsets>
+        <statFactors>
+          <MeleeDamageFactor>1.1</MeleeDamageFactor>
+          <SM_BodySizeMultiplier>1.1</SM_BodySizeMultiplier>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="RedMattis.BigSmall">
+    <defName>BT_Giant</defName>
+    <!-- Jotun, Half Jotun, Ogre, Great Ogre -->
+    <xenotypes>
+      <li>BS_Jotun</li>
+      <li>BS_Half_Jotun</li>
+      <li>BS_Ogre</li>
+      <li>BS_GreatOgre</li>
+    </xenotypes>
+    <hediff>BT_Taste_Giant</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="RedMattis.BigSmall">
+    <defName>BT_Taste_Ember</defName>
+    <label>ember blood</label>
+    <description>Blood that is almost too hot to drink, from the fire giants. Heat slides off the drinker.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <ComfyTemperatureMax>15</ComfyTemperatureMax>
+          <ArmorRating_Heat>0.25</ArmorRating_Heat>
+        </statOffsets>
+        <statFactors>
+          <MeleeDamageFactor>1.05</MeleeDamageFactor>
+          <Flammability>0.3</Flammability>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="RedMattis.BigSmall">
+    <defName>BT_Ember</defName>
+    <!-- Fire Jotun, Heir of Surtr, Heir of Aurgelmir -->
+    <xenotypes>
+      <li>BS_FireJotun</li>
+      <li>BS_Surtr</li>
+      <li>BS_Ymir</li>
+    </xenotypes>
+    <hediff>BT_Taste_Ember</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="RedMattis.BigSmall,RedMattis.BigSmall.Core,sarg.alphagenes">
+    <defName>BT_Taste_Frost</defName>
+    <label>frost blood</label>
+    <description>Ice-cold blood from creatures of the frozen worlds. The drinker stops feeling the cold.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <ComfyTemperatureMin>-15</ComfyTemperatureMin>
+        </statOffsets>
+        <statFactors>
+          <MeleeDamageFactor>1.05</MeleeDamageFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="RedMattis.BigSmall,RedMattis.BigSmall.Core,sarg.alphagenes">
+    <defName>BT_Frost</defName>
+    <!-- Frost Jotun, Frost Jotun, animusen -->
+    <xenotypes>
+      <li>BS_FrostJotun</li>
+      <li>BS_FrostJotunInBlue</li>
+      <li>AG_Animusen</li>
+    </xenotypes>
+    <hediff>BT_Taste_Frost</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="RedMattis.BigSmall">
+    <defName>BT_Taste_Troll</defName>
+    <label>troll blood</label>
+    <description>Troll blood keeps trying to heal whatever it touches, including the drinker.</description>
+    <stages>
+      <li>
+        <naturalHealingFactor>2</naturalHealingFactor>
+        <hungerRateFactor>1.15</hungerRateFactor>
+        <statOffsets>
+          <InjuryHealingFactor>1</InjuryHealingFactor>
+        </statOffsets>
+        <statFactors>
+          <Flammability>1.5</Flammability>
+          <SM_ConcussiveDmgMult>0.9</SM_ConcussiveDmgMult>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="RedMattis.BigSmall">
+    <defName>BT_Troll</defName>
+    <!-- young troll, troll, old troll -->
+    <xenotypes>
+      <li>BS_Troll</li>
+      <li>BS_TrollAdult</li>
+      <li>BS_TrollOld</li>
+    </xenotypes>
+    <hediff>BT_Taste_Troll</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequireAnyOf="RedMattis.BigSmall">
+    <defName>BT_Taste_Titan</defName>
+    <label>titan blood</label>
+    <description>Blood from a vat-grown titan, still crackling with berserk xenogenes. Immense power, frayed nerves.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <CarryingCapacity>40</CarryingCapacity>
+          <MoveSpeed>-0.25</MoveSpeed>
+          <MentalBreakThreshold>0.03</MentalBreakThreshold>
+        </statOffsets>
+        <statFactors>
+          <MeleeDamageFactor>1.2</MeleeDamageFactor>
+          <IncomingDamageFactor>0.85</IncomingDamageFactor>
+          <SM_BodySizeMultiplier>1.2</SM_BodySizeMultiplier>
+          <SM_ConcussiveDmgMult>0.8</SM_ConcussiveDmgMult>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequireAnyOf="RedMattis.BigSmall">
+    <defName>BT_Titan</defName>
+    <!-- Deteriorating Titan, corrupted titan -->
+    <xenotypes>
+      <li>BS_BrokenTitan</li>
+      <li>BS_Corrupterd_Titan</li>
+    </xenotypes>
+    <hediff>BT_Taste_Titan</hediff>
+  </BloodTastes.BloodTasteDef>
+
+</Defs>
