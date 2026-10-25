@@ -4,6 +4,7 @@
 	<author>DanZinagri</author>
 	<packageId>DanZinagri.SanguophageBloodTastes</packageId>
 	<supportedVersions>
+		<li>1.6</li>
 		<li>1.7</li>
 	</supportedVersions>
 	<description>Xenotype based blood buffs.</description>

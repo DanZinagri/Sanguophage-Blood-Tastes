@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <loadFolders>
+	<!-- Defs and patches are the same for both versions and live in Common; only the DLL differs. -->
+	<v1.6>
+		<li>/</li>
+		<li>Common</li>
+		<li>1.6</li>
+		<!-- VRE overhauls of vanilla xenotypes add VEF effects to those vanilla tastes. -->
+		<li IfModActive="vanillaracesexpanded.hussar">Common/Mods/VRE_Hussar</li>
+		<li IfModActive="vanillaracesexpanded.highmate">Common/Mods/VRE_Highmate</li>
+		<li IfModActive="vanillaracesexpanded.pigskin">Common/Mods/VRE_Pigskin</li>
+		<li IfModActive="vanillaracesexpanded.waster">Common/Mods/VRE_Waster</li>
+		<li IfModActive="vanillaracesexpanded.starjack">Common/Mods/VRE_Starjack</li>
+	</v1.6>
 	<v1.7>
 		<li>/</li>
+		<li>Common</li>
 		<li>1.7</li>
 		<!-- VRE overhauls of vanilla xenotypes add VEF effects to those vanilla tastes. -->
-		<li IfModActive="vanillaracesexpanded.hussar">1.7/Mods/VRE_Hussar</li>
-		<li IfModActive="vanillaracesexpanded.highmate">1.7/Mods/VRE_Highmate</li>
-		<li IfModActive="vanillaracesexpanded.pigskin">1.7/Mods/VRE_Pigskin</li>
-		<li IfModActive="vanillaracesexpanded.waster">1.7/Mods/VRE_Waster</li>
-		<li IfModActive="vanillaracesexpanded.starjack">1.7/Mods/VRE_Starjack</li>
+		<li IfModActive="vanillaracesexpanded.hussar">Common/Mods/VRE_Hussar</li>
+		<li IfModActive="vanillaracesexpanded.highmate">Common/Mods/VRE_Highmate</li>
+		<li IfModActive="vanillaracesexpanded.pigskin">Common/Mods/VRE_Pigskin</li>
+		<li IfModActive="vanillaracesexpanded.waster">Common/Mods/VRE_Waster</li>
+		<li IfModActive="vanillaracesexpanded.starjack">Common/Mods/VRE_Starjack</li>
 	</v1.7>
 </loadFolders>
