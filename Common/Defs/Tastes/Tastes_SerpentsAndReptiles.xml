@@ -154,4 +154,34 @@
     <hediff>BT_Taste_Reptile</hediff>
   </BloodTastes.BloodTasteDef>
 
+  <!-- A mild, day-long take on the Dioktri's own Bloodrush, with its cold-blooded downside. -->
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequire="Rimsenal.Dioktri">
+    <defName>BT_Taste_Dioktri</defName>
+    <label>dioktri blood</label>
+    <description>Hunter's blood from a rattlesnake bioweapon, still carrying an echo of its bloodrush. The drinker moves and strikes faster and shrugs off pain, but slows in the cold.</description>
+    <stages>
+      <li>
+        <painFactor>0.85</painFactor>
+        <statOffsets>
+          <MoveSpeed>0.2</MoveSpeed>
+          <ComfyTemperatureMin>3</ComfyTemperatureMin>
+        </statOffsets>
+        <statFactors>
+          <MeleeCooldownFactor>0.9</MeleeCooldownFactor>
+          <RangedCooldownFactor>0.9</RangedCooldownFactor>
+          <AimingDelayFactor>0.9</AimingDelayFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequire="Rimsenal.Dioktri">
+    <defName>BT_Dioktri</defName>
+    <!-- Dioktri -->
+    <xenotypes>
+      <li>Dioktri</li>
+    </xenotypes>
+    <hediff>BT_Taste_Dioktri</hediff>
+  </BloodTastes.BloodTasteDef>
+
 </Defs>
