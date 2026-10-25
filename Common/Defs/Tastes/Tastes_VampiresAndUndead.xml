@@ -35,4 +35,28 @@
     <hediff>BT_Taste_FeralKindred</hediff>
   </BloodTastes.BloodTasteDef>
 
+  <!-- The Vesperan day form. Its night form, Duskborne, shares the vanilla sanguophage taste. -->
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequire="Samael.Duskborne">
+    <defName>BT_Taste_Dawnbound</defName>
+    <label>dawnbound blood</label>
+    <description>Vesperan blood in its daylight state: almost human, with a faint archite trace that waits for nightfall.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <MentalBreakThreshold>-0.03</MentalBreakThreshold>
+          <HemogenGainFactor>0.1</HemogenGainFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequire="Samael.Duskborne">
+    <defName>BT_Dawnbound</defName>
+    <!-- Dawnbound -->
+    <xenotypes>
+      <li>SG_Dawnbound</li>
+    </xenotypes>
+    <hediff>BT_Taste_Dawnbound</hediff>
+  </BloodTastes.BloodTasteDef>
+
 </Defs>

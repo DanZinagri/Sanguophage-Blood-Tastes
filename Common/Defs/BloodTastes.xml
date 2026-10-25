@@ -38,6 +38,7 @@
       <li>VRE_Bruxa</li>
       <li>RS_Charmweaver</li>
       <li>VU_Dracul_HalfVampire</li>
+      <li>SG_Duskborne</li>
     </xenotypes>
     <hediff>BT_Taste_Sanguophage</hediff>
   </BloodTastes.BloodTasteDef>
