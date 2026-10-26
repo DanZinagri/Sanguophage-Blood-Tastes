@@ -108,7 +108,7 @@ namespace BloodTastes
             if (settings.xenotypeTastes && source.genes != null && !source.genes.UniqueXenotype
                 && tastesByXenotype.TryGetValue(source.genes.Xenotype, out BloodTasteDef taste))
             {
-                Hediff given = GiveOrTopUp(biter, taste.hediff, taste.severity);
+                Hediff given = GiveOrTopUp(biter, taste.hediff, taste.SeverityFor(source));
                 if (given != null)
                 {
                     given.TryGetComp<HediffComp_Disappears>()?.ResetElapsedTicks();

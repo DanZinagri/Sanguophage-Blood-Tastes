@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Revia. The taste grows with the victim's Soul Reap tier (1-9 tails): severity = tier, one stage per tier. A
+       Revia with no tier yet tastes like tier 1. Revia_PsyfocusPerKill is the Revia mod's own stat (psyfocus gained
+       per kill, only for psylinked pawns); it always exists alongside this taste. -->
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequire="FS.ReviaRaceBiotech">
+    <defName>BT_Taste_Revia</defName>
+    <label>revia blood</label>
+    <description>Blood consecrated to Skarne, the blood goddess. The more lives its owner has reaped, the more of her favour it carries: stronger blows, a thirst for hemogen, and psyfocus from every kill.</description>
+    <maxSeverity>9</maxSeverity>
+    <stages>
+      <li>
+        <minSeverity>0</minSeverity>
+        <label>1 tail</label>
+        <statOffsets>
+          <MeleeHitChance>0.4</MeleeHitChance>
+          <HemogenGainFactor>0.04</HemogenGainFactor>
+          <Revia_PsyfocusPerKill>0.005</Revia_PsyfocusPerKill>
+        </statOffsets>
+        <statFactors>
+          <MeleeDamageFactor>1.02</MeleeDamageFactor>
+        </statFactors>
+      </li>
+      <li>
+        <minSeverity>2</minSeverity>
+        <label>2 tails</label>
+        <statOffsets>
+          <MeleeHitChance>0.8</MeleeHitChance>
+          <HemogenGainFactor>0.08</HemogenGainFactor>
+          <Revia_PsyfocusPerKill>0.01</Revia_PsyfocusPerKill>
+        </statOffsets>
+        <statFactors>
+          <MeleeDamageFactor>1.04</MeleeDamageFactor>
+        </statFactors>
+      </li>
+      <li>
+        <minSeverity>3</minSeverity>
+        <label>3 tails</label>
+        <statOffsets>
+          <MeleeHitChance>1.2</MeleeHitChance>
+          <HemogenGainFactor>0.12</HemogenGainFactor>
+          <Revia_PsyfocusPerKill>0.015</Revia_PsyfocusPerKill>
+        </statOffsets>
+        <statFactors>
+          <MeleeDamageFactor>1.06</MeleeDamageFactor>
+        </statFactors>
+      </li>
+      <li>
+        <minSeverity>4</minSeverity>
+        <label>4 tails</label>
+        <statOffsets>
+          <MeleeHitChance>1.6</MeleeHitChance>
+          <HemogenGainFactor>0.16</HemogenGainFactor>
+          <Revia_PsyfocusPerKill>0.02</Revia_PsyfocusPerKill>
+        </statOffsets>
+        <statFactors>
+          <MeleeDamageFactor>1.08</MeleeDamageFactor>
+        </statFactors>
+      </li>
+      <li>
+        <minSeverity>5</minSeverity>
+        <label>5 tails</label>
+        <statOffsets>
+          <MeleeHitChance>2</MeleeHitChance>
+          <HemogenGainFactor>0.2</HemogenGainFactor>
+          <Revia_PsyfocusPerKill>0.025</Revia_PsyfocusPerKill>
+        </statOffsets>
+        <statFactors>
+          <MeleeDamageFactor>1.1</MeleeDamageFactor>
+        </statFactors>
+      </li>
+      <li>
+        <minSeverity>6</minSeverity>
+        <label>6 tails</label>
+        <statOffsets>
+          <MeleeHitChance>2.4</MeleeHitChance>
+          <HemogenGainFactor>0.24</HemogenGainFactor>
+          <Revia_PsyfocusPerKill>0.03</Revia_PsyfocusPerKill>
+        </statOffsets>
+        <statFactors>
+          <MeleeDamageFactor>1.12</MeleeDamageFactor>
+        </statFactors>
+      </li>
+      <li>
+        <minSeverity>7</minSeverity>
+        <label>7 tails</label>
+        <statOffsets>
+          <MeleeHitChance>2.8</MeleeHitChance>
+          <HemogenGainFactor>0.28</HemogenGainFactor>
+          <Revia_PsyfocusPerKill>0.035</Revia_PsyfocusPerKill>
+        </statOffsets>
+        <statFactors>
+          <MeleeDamageFactor>1.14</MeleeDamageFactor>
+        </statFactors>
+      </li>
+      <li>
+        <minSeverity>8</minSeverity>
+        <label>8 tails</label>
+        <statOffsets>
+          <MeleeHitChance>3.2</MeleeHitChance>
+          <HemogenGainFactor>0.32</HemogenGainFactor>
+          <Revia_PsyfocusPerKill>0.04</Revia_PsyfocusPerKill>
+        </statOffsets>
+        <statFactors>
+          <MeleeDamageFactor>1.16</MeleeDamageFactor>
+        </statFactors>
+      </li>
+      <li>
+        <minSeverity>9</minSeverity>
+        <label>9 tails</label>
+        <statOffsets>
+          <MeleeHitChance>3.6</MeleeHitChance>
+          <HemogenGainFactor>0.36</HemogenGainFactor>
+          <Revia_PsyfocusPerKill>0.045</Revia_PsyfocusPerKill>
+        </statOffsets>
+        <statFactors>
+          <MeleeDamageFactor>1.18</MeleeDamageFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequire="FS.ReviaRaceBiotech">
+    <defName>BT_Revia</defName>
+    <!-- Revia -->
+    <xenotypes>
+      <li>RevianXenotype</li>
+    </xenotypes>
+    <hediff>BT_Taste_Revia</hediff>
+    <severityFromSourceHediffs>
+      <li><hediff>ReviaRaceSoulreapTier1</hediff><severity>1</severity></li>
+      <li><hediff>ReviaRaceSoulreapTier2</hediff><severity>2</severity></li>
+      <li><hediff>ReviaRaceSoulreapTier3</hediff><severity>3</severity></li>
+      <li><hediff>ReviaRaceSoulreapTier4</hediff><severity>4</severity></li>
+      <li><hediff>ReviaRaceSoulreapTier5</hediff><severity>5</severity></li>
+      <li><hediff>ReviaRaceSoulreapTier6</hediff><severity>6</severity></li>
+      <li><hediff>ReviaRaceSoulreapTier7</hediff><severity>7</severity></li>
+      <li><hediff>ReviaRaceSoulreapTier8</hediff><severity>8</severity></li>
+      <li><hediff>ReviaRaceSoulreapTier9</hediff><severity>9</severity></li>
+    </severityFromSourceHediffs>
+  </BloodTastes.BloodTasteDef>
+
+</Defs>
