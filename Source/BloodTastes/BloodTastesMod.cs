@@ -1,3 +1,4 @@
+using System.Reflection;
 using HarmonyLib;
 using UnityEngine;
 using Verse;
@@ -26,7 +27,9 @@ namespace BloodTastes
         {
             settings = GetSettings<BloodTastesSettings>();
             Harmony harmony = new Harmony("DanZinagri.SanguophageBloodTastes");
-            harmony.PatchAll();
+            // The assembly is passed explicitly: on .NET 10 (1.7) the parameterless PatchAll() reads the calling
+            // assembly off the stack, which breaks when the JIT inlines the call (Harmony issue #395).
+            harmony.PatchAll(Assembly.GetExecutingAssembly());
             VRECorpseCompat.TryPatch(harmony);
         }
 
