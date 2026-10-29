@@ -9,6 +9,9 @@ namespace BloodTastes
     public class BloodTasteDef : Def
     {
         public List<string> xenotypes;
+        // Optional: full type names of DefModExtensions. Every xenotype carrying one gets this taste, unless a taste
+        // lists that xenotype by defName. Names, not types, so the extension's mod needn't be loaded.
+        public List<string> xenotypeExtensions;
         public HediffDef hediff;
         // Severity the hediff is given at. A repeat bite keeps the higher of this and the current severity.
         public float severity = 1f;
@@ -62,9 +65,9 @@ namespace BloodTastes
             {
                 yield return error;
             }
-            if (xenotypes.NullOrEmpty())
+            if (xenotypes.NullOrEmpty() && xenotypeExtensions.NullOrEmpty())
             {
-                yield return "xenotypes is empty";
+                yield return "xenotypes and xenotypeExtensions are both empty";
             }
             if (hediff == null)
             {

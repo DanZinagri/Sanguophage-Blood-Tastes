@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using HarmonyLib;
 using RimWorld;
@@ -57,6 +58,27 @@ namespace BloodTastes
                         continue;
                     }
                     tastesByXenotype[xenotype] = def;
+                }
+            }
+
+            // Then any xenotype carrying a mod extension a taste names claims that taste, unless a taste already lists
+            // it by defName. Covers families like Anthrosonae, whose add-ons all inherit one extension.
+            List<BloodTasteDef> byExtension = DefDatabase<BloodTasteDef>.AllDefsListForReading
+                .FindAll(def => def.hediff != null && !def.xenotypeExtensions.NullOrEmpty());
+            if (byExtension.Count > 0)
+            {
+                foreach (XenotypeDef xenotype in DefDatabase<XenotypeDef>.AllDefsListForReading)
+                {
+                    if (xenotype.modExtensions.NullOrEmpty() || tastesByXenotype.ContainsKey(xenotype))
+                    {
+                        continue;
+                    }
+                    BloodTasteDef match = byExtension.Find(def =>
+                        xenotype.modExtensions.Any(ext => def.xenotypeExtensions.Contains(ext.GetType().FullName)));
+                    if (match != null)
+                    {
+                        tastesByXenotype[xenotype] = match;
+                    }
                 }
             }
 

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Anthrosonae. Every subtype (base mod and add-ons: Felines, Oca's, Mongoose, ...) is its own xenotype, but they
+       all inherit Anthrosonae.XenotypeExtension from ATK_AnthrosonaBase, so the taste matches that extension instead
+       of listing them. Cosmetic-only genes, functionally baseliners, so the taste mirrors baseliner blood. -->
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequire="ATK.Anthrosonae">
+    <defName>BT_Taste_Anthrosonae</defName>
+    <label>anthrosonae blood</label>
+    <description>For all the fur, ears and tails, anthrosona blood tastes almost exactly like a baseliner's: plain, familiar and comforting.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <MentalBreakThreshold>-0.03</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequire="ATK.Anthrosonae">
+    <defName>BT_Anthrosonae</defName>
+    <xenotypeExtensions>
+      <li>Anthrosonae.XenotypeExtension</li>
+    </xenotypeExtensions>
+    <hediff>BT_Taste_Anthrosonae</hediff>
+  </BloodTastes.BloodTasteDef>
+
+</Defs>
