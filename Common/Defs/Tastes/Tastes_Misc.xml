@@ -313,4 +313,58 @@
     <hediff>BT_Taste_Honeyed</hediff>
   </BloodTastes.BloodTasteDef>
 
+  <!-- Korg and Molong (both require EBSG, so EBSG_ stats are safe). -->
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequire="Sovereign.Kork">
+    <defName>BT_Taste_Korg</defName>
+    <label>korg blood</label>
+    <description>Thick, spore-laced blood from a fungal war-horde. Wounds knit fast, blood loss fades and the drinker itches for a fight.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <InjuryHealingFactor>0.5</InjuryHealingFactor>
+          <EBSG_BloodlossRecoveryBonus>1</EBSG_BloodlossRecoveryBonus>
+          <MentalBreakThreshold>0.02</MentalBreakThreshold>
+        </statOffsets>
+        <statFactors>
+          <MeleeDamageFactor>1.1</MeleeDamageFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequire="Sovereign.Kork">
+    <defName>BT_Korg</defName>
+    <xenotypes>
+      <li>Korg</li>
+    </xenotypes>
+    <hediff>BT_Taste_Korg</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequire="Sov.Tengri">
+    <defName>BT_Taste_Molong</defName>
+    <label>molong blood</label>
+    <description>Calm, contemplative blood behind a devil's face. The drinker feels serene and persuasive, and a little reluctant to hurt anyone.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <MentalBreakThreshold>-0.05</MentalBreakThreshold>
+          <NegotiationAbility>0.15</NegotiationAbility>
+          <SocialImpact>0.1</SocialImpact>
+        </statOffsets>
+        <statFactors>
+          <EBSG_MoodRiseRate>1.3</EBSG_MoodRiseRate>
+          <MeleeDamageFactor>0.9</MeleeDamageFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequire="Sov.Tengri">
+    <defName>BT_Molong</defName>
+    <xenotypes>
+      <li>GS_Molong</li>
+    </xenotypes>
+    <hediff>BT_Taste_Molong</hediff>
+  </BloodTastes.BloodTasteDef>
+
 </Defs>

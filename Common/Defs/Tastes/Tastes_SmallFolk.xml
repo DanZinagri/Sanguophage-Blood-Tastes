@@ -88,4 +88,84 @@
     <hediff>BT_Taste_Redcap</hediff>
   </BloodTastes.BloodTasteDef>
 
+  <!-- Fairy Xenotype (requires Big and Small, so SM_ stats are safe). -->
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequire="V.Fairy">
+    <defName>BT_Taste_Fairy</defName>
+    <label>fairy blood</label>
+    <description>Sweet, sparkling fairy blood. The drinker feels small, quick and faintly attuned to the psychic world, if a little delicate.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <MeleeDodgeChance>6</MeleeDodgeChance>
+          <MoveSpeed>0.2</MoveSpeed>
+          <PsychicSensitivity>0.1</PsychicSensitivity>
+          <ToxicResistance>-0.1</ToxicResistance>
+        </statOffsets>
+        <statFactors>
+          <SM_BodySizeMultiplier>0.9</SM_BodySizeMultiplier>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequire="V.Fairy">
+    <defName>BT_Fairy</defName>
+    <xenotypes>
+      <li>VFairy</li>
+    </xenotypes>
+    <hediff>BT_Taste_Fairy</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequire="V.Fairy">
+    <defName>BT_Taste_DarkFairy</defName>
+    <label>dark fairy blood</label>
+    <description>Sharp, bitter dark-fairy blood. The drinker feels small and quick, and wants to prove it in a fight.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <MeleeDodgeChance>6</MeleeDodgeChance>
+          <MoveSpeed>0.2</MoveSpeed>
+          <ToxicResistance>-0.1</ToxicResistance>
+        </statOffsets>
+        <statFactors>
+          <SM_BodySizeMultiplier>0.9</SM_BodySizeMultiplier>
+          <MeleeDamageFactor>1.1</MeleeDamageFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequire="V.Fairy">
+    <defName>BT_DarkFairy</defName>
+    <xenotypes>
+      <li>VDFairy</li>
+    </xenotypes>
+    <hediff>BT_Taste_DarkFairy</hediff>
+  </BloodTastes.BloodTasteDef>
+
+  <!-- Kabouter Xenotype (requires EBSG, but nothing here needs it). -->
+  <HediffDef ParentName="BT_BloodTasteBase" MayRequire="Sovereign.ChipChipChip">
+    <defName>BT_Taste_Kabouter</defName>
+    <label>kabouter blood</label>
+    <description>Twitchy, gold-hungry gnome blood. The drinker's eye for ore and bargains sharpens, and so do their nerves.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <MiningYield>0.15</MiningYield>
+          <MiningSpeed>0.1</MiningSpeed>
+          <TradePriceImprovement>0.05</TradePriceImprovement>
+          <MentalBreakThreshold>0.02</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <BloodTastes.BloodTasteDef MayRequire="Sovereign.ChipChipChip">
+    <defName>BT_Kabouter</defName>
+    <xenotypes>
+      <li>GS_Kabouter</li>
+    </xenotypes>
+    <hediff>BT_Taste_Kabouter</hediff>
+  </BloodTastes.BloodTasteDef>
+
 </Defs>
